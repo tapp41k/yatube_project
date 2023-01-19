@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from posts import views
 
 urlpatterns = [
     path('', include('posts.urls', namespace='posts')),
     path('admin/', admin.site.urls),
-    path('group/<slug:slug>/', include('posts.urls', namespace='group')),
-    path('group_list/', include('posts.urls', namespace='group_list')),
+    path('group/<slug>/', include('posts.urls', namespace='group_list')),
 ]
