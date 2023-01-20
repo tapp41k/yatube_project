@@ -1,7 +1,6 @@
 from django.contrib import admin
-# Из модуля models импортируем модель Post
 from .models import Post, Group
-# Register your models here.
+
 
 class PostAdmin(admin.ModelAdmin):
     list_display = (
@@ -10,11 +9,12 @@ class PostAdmin(admin.ModelAdmin):
         'pub_date',
         'author',
         'group'
-        ) 
+        )
     list_editable = ('group',)
     search_fields = ('text',) 
     list_filter = ('pub_date',)
     empty_value_display = '-пусто-'
 
-admin.site.register(Post, PostAdmin) 
+
+admin.site.register(Post, PostAdmin)
 admin.site.register(Group)
